@@ -93,16 +93,44 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- Formulário de contato ---
+    // // --- Formulário de contato ---
+    // const contactForm = document.getElementById('contact-form');
+    // if (contactForm) {
+    //     contactForm.addEventListener('submit', function(e) {
+    //         e.preventDefault();
+    //         const formData = new FormData(this);
+    //         const formValues = Object.fromEntries(formData.entries());
+    //         console.log('Formulário enviado:', formValues);
+    //         alert('Mensagem enviada com sucesso! Entrarei em contato em breve.');
+    //         this.reset();
+    //     });
+    // }
+
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
+
             const formData = new FormData(this);
-            const formValues = Object.fromEntries(formData.entries());
-            console.log('Formulário enviado:', formValues);
-            alert('Mensagem enviada com sucesso! Entrarei em contato em breve.');
-            this.reset();
+
+            fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+                .then(response => {
+                    if (response.ok) {
+                        alert('Mensagem enviada com sucesso! Entrarei em contato em breve.');
+                        this.reset();
+                    } else {
+                        alert('Erro ao enviar mensagem. Tente novamente.');
+                    }
+                })
+                .catch(error => {
+                    alert('Erro ao enviar mensagem. Verifique sua conexão.');
+                });
         });
     }
 
