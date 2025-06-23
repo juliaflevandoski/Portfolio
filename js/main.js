@@ -105,7 +105,6 @@ document.addEventListener('DOMContentLoaded', function() {
     //         this.reset();
     //     });
     // }
-
     // --- Formulário de contato ---
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
@@ -122,21 +121,24 @@ document.addEventListener('DOMContentLoaded', function() {
                 },
                 mode: 'cors'
             })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
+                .then(response => {
+                    if (response.ok) {
                         alert('Mensagem enviada com sucesso! Entrarei em contato em breve.');
                         contactForm.reset();
                     } else {
-                        alert('Erro ao enviar mensagem: ' + (data.error || 'Tente novamente.'));
+                        // Tenta ler o JSON da resposta para mostrar uma mensagem mais detalhada
+                        return response.json().then(data => {
+                            throw new Error(data.error || 'Erro ao enviar mensagem. Tente novamente.');
+                        });
                     }
                 })
                 .catch(error => {
-                    alert('Erro ao enviar mensagem. Verifique sua conexão.');
-                    console.error('Erro no fetch do formulário:', error);
+                    alert(error.message || 'Erro ao enviar mensagem. Verifique sua conexão.');
+                    console.error('Erro no envio do formulário:', error);
                 });
         });
     }
+
     // --- Ativar link do menu conforme rolagem ---
     const sections = document.querySelectorAll('main section[id]');
     const navLinks = document.querySelectorAll('.navbar a');
