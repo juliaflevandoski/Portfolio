@@ -106,44 +106,67 @@ document.addEventListener('DOMContentLoaded', function() {
     //     });
     // }
     // --- Formulário de contato ---
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
+    // const contactForm = document.getElementById('contact-form');
+    // if (contactForm) {
+    //     contactForm.addEventListener('submit', async function(e) {
+    //         e.preventDefault();
+    //
+    //         const formData = new FormData(this);
+    //
+    //         try {
+    //             const response = await fetch(this.action, {
+    //                 method: 'POST',
+    //                 body: formData,
+    //                 headers: {
+    //                     'Accept': 'application/json'
+    //                 },
+    //                 mode: 'cors'
+    //             });
+    //
+    //             if (response.ok) {
+    //                 alert('Mensagem enviada com sucesso! Entrarei em contato em breve.');
+    //                 contactForm.reset();
+    //             } else {
+    //                 let errorMessage = 'Erro ao enviar mensagem. Tente novamente.';
+    //                 try {
+    //                     const errorData = await response.json();
+    //                     if (errorData.error) {
+    //                         errorMessage = errorData.error;
+    //                     }
+    //                 } catch {
+    //                 }
+    //                 alert(errorMessage);
+    //             }
+    //
+    //         } catch (error) {
+    //             alert('Erro ao enviar mensagem. Verifique sua conexão.');
+    //             console.error('Erro no envio do formulário:', error);
+    //         }
+    //     });
+    // }
+        const form = document.getElementById('formulario-contato');
+        const statusMsg = document.getElementById('mensagem-status');
 
-            const formData = new FormData(this);
+        form.addEventListener('submit', function(event) {
+        event.preventDefault();
 
-            try {
-                const response = await fetch(this.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    },
-                    mode: 'cors'
-                });
+        const data = new FormData(form);
 
-                if (response.ok) {
-                    alert('Mensagem enviada com sucesso! Entrarei em contato em breve.');
-                    contactForm.reset();
-                } else {
-                    let errorMessage = 'Erro ao enviar mensagem. Tente novamente.';
-                    try {
-                        const errorData = await response.json();
-                        if (errorData.error) {
-                            errorMessage = errorData.error;
-                        }
-                    } catch {
-                    }
-                    alert(errorMessage);
-                }
-
-            } catch (error) {
-                alert('Erro ao enviar mensagem. Verifique sua conexão.');
-                console.error('Erro no envio do formulário:', error);
-            }
-        });
+        fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+    }).then(response => {
+        if (response.ok) {
+        statusMsg.textContent = 'Mensagem enviada com sucesso!';
+        form.reset();
+    } else {
+        statusMsg.textContent = 'Erro ao enviar. Tente novamente.';
     }
+    }).catch(() => {
+        statusMsg.textContent = 'Erro ao enviar. Tente novamente.';
+    });
+    });
 
 
     // --- Ativar link do menu conforme rolagem ---
