@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    // --- Menu Mobile ---
     const menuToggle = document.querySelector('.menu-toggle');
     const navbar = document.querySelector('.navbar');
 
@@ -13,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- Header Scroll Effect ---
     const header = document.querySelector('.header');
     if (header) {
         window.addEventListener('scroll', () => {
@@ -25,12 +23,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- Smooth Scrolling for Anchor Links ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
 
-            // Fechar menu mobile se estiver aberto ao clicar em um link
             if (navbar && navbar.classList.contains('active')) {
                 navbar.classList.remove('active');
                 menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
@@ -45,7 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // --- Filtro de projetos ---
     const filterButtons = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
 
@@ -68,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- Dark/Light Mode Toggle ---
     const themeToggle = document.getElementById('theme-toggle');
     if (themeToggle) {
         // Aplica o tema salvo no carregamento da página
@@ -82,7 +76,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
-        // Evento de clique para trocar o tema
         themeToggle.addEventListener('click', () => {
             const newTheme = document.body.dataset.theme === 'dark' ? 'light' : 'dark';
             document.body.dataset.theme = newTheme;
@@ -93,57 +86,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // // --- Formulário de contato ---
-    // const contactForm = document.getElementById('contact-form');
-    // if (contactForm) {
-    //     contactForm.addEventListener('submit', function(e) {
-    //         e.preventDefault();
-    //         const formData = new FormData(this);
-    //         const formValues = Object.fromEntries(formData.entries());
-    //         console.log('Formulário enviado:', formValues);
-    //         alert('Mensagem enviada com sucesso! Entrarei em contato em breve.');
-    //         this.reset();
-    //     });
-    // }
-    // --- Formulário de contato ---
-    // const contactForm = document.getElementById('contact-form');
-    // if (contactForm) {
-    //     contactForm.addEventListener('submit', async function(e) {
-    //         e.preventDefault();
-    //
-    //         const formData = new FormData(this);
-    //
-    //         try {
-    //             const response = await fetch(this.action, {
-    //                 method: 'POST',
-    //                 body: formData,
-    //                 headers: {
-    //                     'Accept': 'application/json'
-    //                 },
-    //                 mode: 'cors'
-    //             });
-    //
-    //             if (response.ok) {
-    //                 alert('Mensagem enviada com sucesso! Entrarei em contato em breve.');
-    //                 contactForm.reset();
-    //             } else {
-    //                 let errorMessage = 'Erro ao enviar mensagem. Tente novamente.';
-    //                 try {
-    //                     const errorData = await response.json();
-    //                     if (errorData.error) {
-    //                         errorMessage = errorData.error;
-    //                     }
-    //                 } catch {
-    //                 }
-    //                 alert(errorMessage);
-    //             }
-    //
-    //         } catch (error) {
-    //             alert('Erro ao enviar mensagem. Verifique sua conexão.');
-    //             console.error('Erro no envio do formulário:', error);
-    //         }
-    //     });
-    // }
         const form = document.getElementById('formulario-contato');
         const statusMsg = document.getElementById('mensagem-status');
 
@@ -168,8 +110,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     });
 
-
-    // --- Ativar link do menu conforme rolagem ---
     const sections = document.querySelectorAll('main section[id]');
     const navLinks = document.querySelectorAll('.navbar a');
 
@@ -192,7 +132,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- Atualizar ano no footer ---
     const yearSpan = document.getElementById('current-year');
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
