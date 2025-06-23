@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio profissional de Júlia Fernanda Levandoski - Estudante de Ciência da Computação">
+    <title>Júlia Fernanda Levandoski | Portfólio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body data-theme="light">
+<header class="header">
+    <div class="container">
+        <a href="#home" class="logo">Júlia<span>FL</span></a>
+        <nav class="navbar" aria-label="Navegação principal">
+            <ul>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#projects">Projetos</a></li>
+                <li><a href="#contact" class="contact-link">Contato</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <button id="theme-toggle" aria-label="Alternar tema claro/escuro">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="menu-toggle" aria-label="Menu mobile">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+</header>
+
+<main role="main">
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Júlia Fernanda Levandoski</h1>
+                <h2>Estudante de Ciência da Computação</h2>
+                <p>Bem-vindo ao meu portfólio profissional</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn-primary">Ver Projetos</a>
+                    <a href="assets/docs/curriculo.pdf" download class="btn-secondary">
+                        <i class="fas fa-download"></i> Currículo
+                    </a>
+                </div>
+                <div class="hero-social">
+                    <a href="https://github.com/juliaflev" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.instagram.com/juliaflevandoski/?next=" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="decorative-circle pink"></div>
+                <img src="assets/images/profile.jpg" alt="Júlia Fernanda - Foto de perfil profissional">
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">Minha <span>Jornada</span></h2>
+            <p class="section-subtitle">Conheça mais sobre minha trajetória</p>
+
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>Quem sou eu</h3>
+                    <p>Olá! Sou estudante de Ciência da Computação na <a href="https://www.uricer.edu.br/site/" target="_blank" rel="noopener noreferrer">URI</a> Erechim, apaixonada por tecnologia e em constante busca por aprendizado e crescimento profissional.</p>
+                    <p>Atualmente, atuo como estagiária de suporte na empresa <a href="https://agro1.inf.br/" target="_blank" rel="noopener noreferrer">Agro1</a>, onde venho desenvolvendo habilidades práticas na área de infraestrutura e atendimento técnico.</p>
+                    <p>Tive a oportunidade de participar de um programa de bolsas promovido pela <a href="https://compass.uol/en/about-us/academy/" target="_blank" rel="noopener noreferrer">Compass.UOL</a>, com foco em DevSecOps e serviços em nuvem com AWS.</p>
+
+                    <div class="skills-section">
+                        <h3>Habilidades</h3>
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <div class="skill-icon">
+                                    <i class="fas fa-laptop-code"></i>
+                                </div>
+                                <h4>Tecnologias em Desenvolvimento</h4> <ul>
+                                <li>HTML5 & CSS3</li>
+                                <li>JavaScript</li>
+                                <li>Git & GitHub</li>
+                                <li>Suporte Técnico</li>
+                            </ul>
+                            </div>
+
+                            <div class="skill-category">
+                                <div class="skill-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <h4>Habilidades Interpessoais</h4>
+                                <ul>
+                                    <li>Comunicação Efetiva</li>
+                                    <li>Trabalho em Equipe</li>
+                                    <li>Resolução de Problemas</li>
+                                    <li>Proatividade e Iniciativa</li>
+                                    <li>Adaptabilidade</li>
+                                </ul>
+                            </div>
+
+                            <div class="skill-category">
+                                <div class="skill-icon">
+                                    <i class="fas fa-language"></i>
+                                </div>
+                                <h4>Idiomas</h4>
+                                <ul>
+                                    <li>Português - Nativo</li>
+                                    <li>Inglês - Avançado</li>
+                                    <li>Espanhol - Básico</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2 class="section-title">Meus <span>Projetos</span></h2>
+            <p class="section-subtitle">Alguns dos meus trabalhos recentes</p>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="front-end">Front-end</button>
+                <button class="filter-btn" data-filter="devops">DevOps</button>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card" data-category="front-end">
+                    <div class="project-image">
+                        <img src="assets/images/project1.jpg" alt="Projeto Landing Page Moderna">
+                        <div class="project-overlay">
+                            <a href="#" class="view-btn">Ver Detalhes</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Landing Page Moderna</h3>
+                        <p>HTML, CSS, JavaScript</p>
+                        <div class="project-links">
+                            <a href="https://github.com/juliaflev" target="_blank" rel="noopener noreferrer" aria-label="Ver código no GitHub">
+                                <i class="fab fa-github"></i> Código
+                            </a>
+                            <a href="#" class="disabled-link" aria-label="Demonstração não disponível" title="Demonstração não disponível">
+                                <i class="fas fa-eye"></i> Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card" data-category="devops">
+                    <div class="project-image">
+                        <img src="assets/images/compass2.jpg" alt="Deploy de WordPress com Docker e AWS">
+                        <div class="project-overlay">
+                            <a href="https://github.com/juliaflevandoski/Compass-Projeto-2" class="view-btn" target="_blank" rel="noopener noreferrer">Ver Detalhes</a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Deploy de WordPress com Docker e AWS</h3>
+                        <p>Docker, AWS, Terraform, WordPress</p>
+                        <div class="project-links">
+                            <a href="https://github.com/juliaflev/Compass-Projeto-2" target="_blank" rel="noopener noreferrer" aria-label="Ver código no GitHub">
+                                <i class="fab fa-github"></i> Código
+                            </a>
+                            <a href="#" class="disabled-link" aria-label="Demonstração não disponível" title="Demonstração não disponível">
+                                <i class="fas fa-eye"></i> Demo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Vamos <span>Conversar</span></h2>
+            <p class="section-subtitle">Entre em contato para oportunidades</p>
+            <div class="contact-container">
+                <form id="contact-form" class="contact-form" action="https://formspree.io/f/xzzgjkyy" method="POST">
+                    <div class="form-group">
+                        <label for="name">Nome completo</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Mensagem</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+
+                    <!-- Campo oculto para redirecionar após envio -->
+                    <input type="hidden" name="_next" value="https://seusite.com/obrigado.html">
+
+                    <button type="submit" class="btn-primary">Enviar Mensagem</button>
+                </form>
+                <div class="contact-info">
+                    <h3>Outras formas de contato</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> juliaflevandoski@gmail.com</li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="https://github.com/juliaflev" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.instagram.com/juliaflevandoski/?next=" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-social">
+            <a href="https://github.com/juliaflev" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.instagram.com/juliaflevandoski/?next=" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        <p>© <span id="current-year">2023</span> Júlia Fernanda Levandoski. Todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
