@@ -108,36 +108,43 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- Formulário de contato ---
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
 
             const formData = new FormData(this);
 
-            fetch(this.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                },
-                mode: 'cors'
-            })
-                .then(response => {
-                    if (response.ok) {
-                        alert('Mensagem enviada com sucesso! Entrarei em contato em breve.');
-                        contactForm.reset();
-                    } else {
-                        // Tenta ler o JSON da resposta para mostrar uma mensagem mais detalhada
-                        return response.json().then(data => {
-                            throw new Error(data.error || 'Erro ao enviar mensagem. Tente novamente.');
-                        });
-                    }
-                })
-                .catch(error => {
-                    alert(error.message || 'Erro ao enviar mensagem. Verifique sua conexão.');
-                    console.error('Erro no envio do formulário:', error);
+            try {
+                const response = await fetch(this.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    },
+                    mode: 'cors'
                 });
+
+                if (response.ok) {
+                    alert('Mensagem enviada com sucesso! Entrarei em contato em breve.');
+                    contactForm.reset();
+                } else {
+                    let errorMessage = 'Erro ao enviar mensagem. Tente novamente.';
+                    try {
+                        const errorData = await response.json();
+                        if (errorData.error) {
+                            errorMessage = errorData.error;
+                        }
+                    } catch {
+                    }
+                    alert(errorMessage);
+                }
+
+            } catch (error) {
+                alert('Erro ao enviar mensagem. Verifique sua conexão.');
+                console.error('Erro no envio do formulário:', error);
+            }
         });
     }
+
 
     // --- Ativar link do menu conforme rolagem ---
     const sections = document.querySelectorAll('main section[id]');
