@@ -3,7 +3,7 @@
 Olá! Bem-vindo(a) ao meu portfólio profissional.  
 Aqui você pode conhecer um pouco mais sobre minha jornada, meus projetos e como entrar em contato comigo.
 
-🔗 *Acesse aqui:* 
+🔗 *Acesse aqui: https://juliaflevandoski.github.io/Portfolio/* 
 
 ---
 
